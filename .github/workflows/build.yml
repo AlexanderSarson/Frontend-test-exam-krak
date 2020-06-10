@@ -20,6 +20,9 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v1
         with:
+          env:
+            TEST_USER: ${{ secrets.TEST_USER }}
+            TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
           start: npm run start:ci
           wait-on: 'http://localhost:3000'
           command: npm run cy:ci:test
