@@ -1,22 +1,22 @@
-import React, { useReducer, createContext } from "react";
+import React, { useReducer, createContext } from 'react';
 export const AuthContext = createContext();
 
 const initialState = {
   isLoggedIn: false,
   isAdmin: false,
-  username: "",
+  username: '',
   roles: []
 };
 
-const AUTH_LOGIN = "AUTH_LOGIN";
-const AUTH_LOGOUT = "AUTH_LOGOUT";
+const AUTH_LOGIN = 'AUTH_LOGIN';
+const AUTH_LOGOUT = 'AUTH_LOGOUT';
 
 const reducer = (state, action) => {
   switch (action.type) {
     case AUTH_LOGIN:
       return {
         isLoggedIn: action.payload.isLoggedIn,
-        isAdmin: action.payload.roles.includes("admin"),
+        isAdmin: action.payload.roles.includes('admin'),
         username: action.payload.username,
         roles: action.payload.roles
       };

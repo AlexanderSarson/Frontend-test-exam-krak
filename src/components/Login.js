@@ -3,6 +3,7 @@ import { Form, Input, Button } from 'semantic-ui-react';
 import { useNavigate } from 'react-router-dom';
 import facade from '../api/apiFacade';
 import { AuthContext } from '../contexts/AuthContext';
+import { getUserAndRoles } from '../utils/JwtTokenParser';
 
 export default function LogIn({ toggleModalLogin }) {
   const {
@@ -26,7 +27,7 @@ export default function LogIn({ toggleModalLogin }) {
       .login(user, pass)
       .then((response) => {
         facade.setToken(response.token);
-        login({ username: response.username, roles: response.roles });
+        login(getUserAndRoles(response.token));
       })
       .catch(console.error);
     toggleModalLogin();
