@@ -12,6 +12,7 @@ import Header from './components/Header';
 import ParentNested from './components/nested/ParentNested';
 import ChildNested from './components/nested/ChildNested';
 import DisplayParams from './components/nested/ChildNested2';
+import Search from './components/Search';
 
 function App() {
   const {
@@ -39,6 +40,7 @@ function App() {
             element={isAdmin ? <Scrape /> : <Navigate to='/login-out' />}
           />
           <Route path='Content3' element={<Content3 />} />
+          <Route path='search' element={<Search />} />
 
           <Route path='parentNested' element={<ParentNested />}>
             <Route path='childNested' element={<ChildNested />} />

@@ -21,6 +21,9 @@ export default function Header({ loginMsg, toggleModal }) {
       <Menu.Item as={NavLink} to='parentNested' name='content3'>
         parentNested
       </Menu.Item>
+      <Menu.Item as={NavLink} to='search' name='search'>
+        Search
+      </Menu.Item>
       {isLoggedIn && (
         <Menu.Item as={NavLink} to='jokes' name='jokes'>
           Jokes
