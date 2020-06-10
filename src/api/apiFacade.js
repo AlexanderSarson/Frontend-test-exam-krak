@@ -1,4 +1,4 @@
-const URL = 'https://sarson.codes/backend-test-exam-krak/';
+const URL = 'https://sarson.codes/backend-test-exam-krak';
 
 function handleHttpErrors(res) {
   if (!res.ok) {
