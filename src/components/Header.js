@@ -18,12 +18,17 @@ export default function Header({ loginMsg, toggleModal }) {
       <Menu.Item as={NavLink} to='content3' name='content3'>
         Content 3
       </Menu.Item>
-      <Menu.Item as={NavLink} to='parentNested' name='content3'>
+      <Menu.Item as={NavLink} to='parentNested' name='parentNested'>
         parentNested
       </Menu.Item>
       <Menu.Item as={NavLink} to='search' name='search'>
         Search
       </Menu.Item>
+      {isAdmin && (
+        <Menu.Item as={NavLink} to='hobbies' name='hobbies'>
+          Hobbies
+        </Menu.Item>
+      )}
       {isLoggedIn && (
         <Menu.Item as={NavLink} to='jokes' name='jokes'>
           Jokes

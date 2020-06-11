@@ -49,6 +49,9 @@ function apiFacade() {
     const options = makeOptions('GET', true); //True add's the token
     return fetch(URL + path, options).then(handleHttpErrors);
   };
+  const avancedFetchData = (path, options) => {
+    return fetch(URL + path, options).then(handleHttpErrors);
+  };
   const makeOptions = (method, addToken, body) => {
     var opts = {
       method: method,
@@ -73,7 +76,8 @@ function apiFacade() {
     login,
     logout,
     fetchData,
-    parseJwt
+    parseJwt,
+    avancedFetchData
   };
 }
 const facade = apiFacade();

@@ -13,6 +13,7 @@ import ParentNested from './components/nested/ParentNested';
 import ChildNested from './components/nested/ChildNested';
 import DisplayParams from './components/nested/ChildNested2';
 import Search from './components/Search';
+import Hobbies from './components/Hobbies';
 
 function App() {
   const {
@@ -41,6 +42,10 @@ function App() {
           />
           <Route path='Content3' element={<Content3 />} />
           <Route path='search' element={<Search />} />
+          <Route
+            path='hobbies'
+            element={isAdmin ? <Hobbies /> : <Navigate to='/login-out' />}
+          />
 
           <Route path='parentNested' element={<ParentNested />}>
             <Route path='childNested' element={<ChildNested />} />
